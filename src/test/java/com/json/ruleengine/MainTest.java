@@ -22,17 +22,6 @@ public class MainTest {
 
     @org.junit.Test
     public void testMain() throws Exception {
-        Connection connection =
-                DriverManager.getConnection("jdbc:calcite:");
-        CalciteConnection calciteConnection =
-                connection.unwrap(CalciteConnection.class);
-        SchemaPlus rootSchema = calciteConnection.getRootSchema();
-        SimpleFilterTable ft = new SimpleFilterTable();
-
-        ResultSet result = connection.createStatement().executeQuery("SELECT \"name\" FROM \"ps\".\"peoples\"");
-        System.out.println("-------"+result.getFetchSize());
-        while(result.next()) {
-            System.out.println(result.getObject(0));
-        }
+        
     }
 }
